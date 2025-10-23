@@ -3,11 +3,12 @@ import { DefaultLoginLayout } from '../../components/default-login-layout/defaul
 
 @Component({
   selector: 'app-login',
+   standalone: true,
   imports: [
     DefaultLoginLayout
   ],
   templateUrl: './login.html',
-  styleUrl: './login.scss'
+  styleUrl: './login.scss',
 })
 export class Login {
 

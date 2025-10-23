@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
   selector: 'app-default-login-layout',
   imports: [],
   templateUrl: './default-login-layout.html',
-  styleUrl: './default-login-layout.scss'
+  styleUrl: './default-login-layout.scss',
 })
 export class DefaultLoginLayout {
 
