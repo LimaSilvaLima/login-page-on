@@ -1,4 +1,5 @@
-@import "../../../styles/variables.scss";
+@use "../../../styles/variables" as *;
+  
 
 main {
     display: flex;
@@ -13,10 +14,12 @@ main {
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        height: 100%;
     }
 
     .main-section {
-        gap: 8px;
+        
+        display: flex;
 
         flex-grow: 1;
         background-color: $gray-bg;
