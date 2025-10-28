@@ -4,7 +4,14 @@
     secondaryBtnText="Signup Now"
 >
     <form [formGroup]="loginForm">
-       <app-primary-input></app-primary-input>
+       <app-primary-input
+        formName="email"
+        type="email"
+        label="Email Address"
+        placeholder="Enter your email"
+        >
+            <img src="/assets/svg/email-icon.svg" alt="icono de email" />
+       </app-primary-input>
     </form>
 </app-default-login-layout>
  

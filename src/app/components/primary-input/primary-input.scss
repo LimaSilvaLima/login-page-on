@@ -1,13 +1,38 @@
 @use '../../../styles/variables.scss' as *;
 
-input {
-    width: 100%;
-    padding: 12px 0 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: none;
-    border-radius: 8px;
-    background-color: $gray-secondary-bg;
-    color: $text-color;
-    font-size: 16px;
+.input-wrapper {
+     color: $text-color;
+     font-size: 16px;
+     text-align: start;
+
+     .input-content{
+        width: 100%;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .icon{
+            padding: 12px;
+            background: $primary-color;
+            border-radius:  0 8px  8px 0;
+
+            img {
+                height: 14px;
+                width: 15px;
+                margin-right: 10px;   
+            }
+        }
+
+        input {
+            width: 100%;
+            border-radius: 8px  0 0 8px;
+            padding: 12px 0 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            background-color: $gray-secondary-bg;
+       
+    } 
+     }
+    
 }
