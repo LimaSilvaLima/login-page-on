@@ -2,10 +2,12 @@
     title="Login into your account!"
     primaryBtnText="Login Now"
     secondaryBtnText="Signup Now"
+    (submit)="submit()"
 >
     <form [formGroup]="loginForm">
        <app-primary-input
-            formName="email"
+            formControlName="email"
+            inputName="email"
             type="email"
             label="Email Address"
             placeholder="Enter your email"
@@ -13,13 +15,15 @@
             <img src="/assets/svg/email-icon.svg" alt="icono de email" />
        </app-primary-input>
        <app-primary-input
-            formName="password"
+            formControlName="password"
+            inputName="password"
             type="password"
             label="Enter with password"
             placeholder="********"
         >
             <img src="/assets/svg/password-icon.svg" alt="icono de email" />
        </app-primary-input>
+       <span>Forgot password?</span>
     </form>
 </app-default-login-layout>
  

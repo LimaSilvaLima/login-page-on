@@ -22,4 +22,16 @@ export class Login {
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     });  
   }
+
+  submit() {
+    if (this.loginForm.valid) {
+      console.log(this.loginForm.value);
+    } else {
+      console.log("Form is invalid");
+    }
+  }
+
+  navigate() {
+    console.log("this.loginForm.value");
+  }
 }
