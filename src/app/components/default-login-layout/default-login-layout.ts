@@ -20,6 +20,7 @@ export class DefaultLoginLayout {
     }
 
     navigate() {
+        console.log("Botão secundário clicado dentro de DefaultLoginLayout!");
         this.onNavigate.emit();
     } 
 }

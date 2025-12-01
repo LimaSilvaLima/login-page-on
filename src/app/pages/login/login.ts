@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DefaultLoginLayout } from '../../components/default-login-layout/default-login-layout';
 import { Form, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PrimaryInput } from "../../components/primary-input/primary-input";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,9 @@ import { PrimaryInput } from "../../components/primary-input/primary-input";
 })
 export class Login {
   loginForm!: FormGroup;
-  constructor() {
+  constructor(
+    private router: Router
+  ) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)]),
@@ -32,6 +35,6 @@ export class Login {
   }
 
   navigate() {
-    console.log("this.loginForm.value");
+    this.router.navigate(['signup']);
   }
 }
