@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { DefaultLoginLayout } from '../../components/default-login-layout/default-login-layout';
-import { Form, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { PrimaryInput } from "../../components/primary-input/primary-input";
 import { Router } from '@angular/router';
+import { LoginService } from '../../services/login.service';
 
 @Component({
   selector: 'app-login',
@@ -12,13 +13,17 @@ import { Router } from '@angular/router';
     ReactiveFormsModule,
     PrimaryInput
 ],
+providers: [
+  LoginService
+],
   templateUrl: './login.html',
   styleUrl: './login.scss',
 })
-export class Login {
+export class LoginComponent {
   loginForm!: FormGroup;
   constructor(
-    private router: Router
+    private router: Router,
+    private loginService: LoginService
   ) {
     this.loginForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email]),
@@ -27,11 +32,14 @@ export class Login {
   }
 
   submit() {
-    if (this.loginForm.valid) {
-      console.log(this.loginForm.value);
-    } else {
-      console.log("Form is invalid");
-    }
+    this.loginService.login(this.loginForm.value.email, this.loginForm.value.password).subscribe({
+      next: (response) => {
+        console.log('Login successful', response);
+      },
+      error: (error) => {
+        console.error('Login failed', error);
+      }
+    });
   }
 
   navigate() {
