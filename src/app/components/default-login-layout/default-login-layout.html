@@ -4,7 +4,12 @@
         <h2>{{ title }}</h2>
         <ng-content></ng-content>
         <div class="btn-wrapper">
-            <button class="btn-primary" type="button" (click)="submit()">{{ primaryBtnText }}</button>
+            <button class="btn-primary" type="button" 
+                (click)="submit()"
+                [disabled]="disabledPrimaryBtn"
+            >
+                {{ primaryBtnText }}
+            </button>
             <div class="divider">
                 <div></div>
                 <span>or</span>
