@@ -44,6 +44,7 @@ export class LoginComponent {
   }
 
   navigate() {
+    console.log("Navigating to signup page...");
     this.router.navigate(['signup']);
   }
 }
